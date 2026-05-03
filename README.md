@@ -42,11 +42,6 @@ cs224n-assignments/
 │   ├── nmt_model.py
 │   └── README.md
 │
-├── a5/                          # Assignment 5 – Self-Attention & Transformers
-│   ├── model.py
-│   ├── attention.py
-│   └── README.md
-│
 └── requirements.txt
 ```
 
@@ -58,18 +53,9 @@ cs224n-assignments/
 
 **Topics:** Co-occurrence matrices, SVD, GloVe, cosine similarity, word analogy, bias analysis
 
-| Section | Description | Points |
-|---|---|---|
-| Part 1 | Count-based word vectors (co-occurrence + TruncatedSVD) | 10 |
-| Part 2 | Prediction-based vectors via GloVe; analogy & bias tasks | 15 |
+Explores two families of word vectors: count-based embeddings built from co-occurrence matrices and reduced with Truncated SVD, and prediction-based embeddings from pretrained GloVe. Includes analysis of word clustering, polysemy, synonyms/antonyms, analogical reasoning, and gender bias.
 
-**Key implementations:**
-- `distinct_words` — builds a sorted vocabulary from a corpus
-- `compute_co_occurrence_matrix` — constructs a word-by-word co-occurrence matrix with a configurable window size
-- `reduce_to_k_dim` — reduces high-dimensional vectors using Truncated SVD (scikit-learn)
-- `plot_embeddings` — 2D scatter visualisation of word embeddings
-
-**Dataset:** [Stanford IMDB Large Movie Review Dataset](https://huggingface.co/datasets/stanfordnlp/imdb) (150 samples)  
+**Dataset:** [Stanford IMDB Large Movie Review Dataset](https://huggingface.co/datasets/stanfordnlp/imdb)
 **Pretrained model:** `glove-wiki-gigaword-200` (400k tokens, 200-dimensional)
 
 ---
@@ -98,14 +84,6 @@ Builds a transition-based dependency parser using a feed-forward neural network.
 **Topics:** Encoder-decoder RNNs, attention mechanism, beam search
 
 Implements a seq2seq NMT model with multiplicative attention. Evaluates translation quality using BLEU score on a Cherokee–English dataset.
-
----
-
-### Assignment 5 — Pretrained Transformers & Fine-Tuning
-
-**Topics:** Self-attention, positional encoding, GPT-style language modelling
-
-Explores the inner workings of transformer attention and fine-tunes a pretrained model on a downstream task. Also investigates how structural priors can be injected into attention patterns.
 
 ---
 
@@ -159,18 +137,6 @@ The first run of Assignment 1 will download the GloVe model (~800 MB). Subsequen
 
 ---
 
-## Results Snapshot
-
-| Assignment | Score |
-|---|---|
-| A1 – Word Vectors | 25 / 25 |
-| A2 – word2vec | — |
-| A3 – Dependency Parsing | — |
-| A4 – NMT | — |
-| A5 – Transformers | — |
-
----
-
 ## Key Concepts Covered
 
 **Word Representations**  
@@ -196,4 +162,3 @@ GloVe vectors support analogy queries via vector arithmetic: `x ≈ w + (g − m
 ## License
 
 This repository is for educational purposes. Please review Stanford's [Honor Code](https://communitystandards.stanford.edu/policies-guidance/honor-code) before reusing any assignment code.
-
